@@ -1,7 +1,7 @@
 # Application of an Externally Developed Algorithm to Identify Research Cases and Controls from Electronic Health Record Data: Failures and Successes
 
 ## Overview
-This repository contains an algorithm designed to determine the diagnosis (Dx) date based on a series of case definitions. The algorithm uses surgical procedures, ICD codes, imaging, and other clinical criteria to identify relevant events and apply Boolean logic for inclusion or exclusion.
+This repository contains an algorithm designed to determine cases and controls from a cohort of patients with rotator cuff disease, based on a series of case/ control definitions. The algorithm uses surgical procedures, ICD and CPT codes to identify relevant events and applies Boolean logic for inclusion or exclusion.
 
 ## Case Definitions and Criteria
 Below are the detailed case definitions and their associated criteria.
