@@ -46,6 +46,33 @@ Below are the detailed case definitions and their associated criteria.
 
 ---
 
+# Control Definitions
+
+This document outlines the control group definitions used for identifying patients who are not classified as cases based on specific CPT and ICD codes.
+
+## Control Definitions and Criteria
+
+### 1. Any Non-Case
+- **Description**: Any non-case patients from the CPT/ICD list.
+- **Criteria and Boolean Logic**:
+  - A) `=Non-case from CPT/ICD list`
+  - B) `NOT case status FROM CPT/ICD codes`
+
+---
+
+### 2. CPT/ICD Only with Imaging Code Confirmation for In-Tact Rotator Cuff
+- **Description**: 
+  - Includes all patients with CPT codes for imaging.
+  - Includes all patients with ICD-9 codes for imaging.
+  - Includes all patients with ICD-10 codes for imaging, with exclusion criteria applied afterward. 
+  - If a patient meets the criteria for being a case, they are excluded from the control group.
+- **Criteria and Boolean Logic**:
+  - A) `(rct_cpt_image_include OR RCT_icd9_image_include OR RCT_icd10_image_include)`
+  - B) `NOT case status from CPT/ICD codes`
+  - C) `NOT (rct_cpt_surg_spec_include OR rct_cpt_surg_nonspec_include OR RCT_icd9_diag_include OR RCT_icd10_diag_include)`
+
+---
+
 ## How to Use
 1. **Go to our paper** to find the full table of CPT codes and ICD codes used in this algorithm.
 2. Use the definitions provided earlier in this README to understand how the logic is applied.
